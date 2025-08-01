@@ -7,7 +7,7 @@ pipeline {
     stages{
          stage("Cleanup Workspace"){
                  steps{
-                  git branch: 'main', credentialsId: 'github', url: 'https://github.com/aravind0560/Jenkins'
+                  git branch: 'main', credentialsId: 'github1', url: 'https://github.com/aravind0560/Jenkins'
                  }
     }
 
