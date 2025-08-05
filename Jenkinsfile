@@ -4,6 +4,7 @@ pipeline {
         jdk 'Java17'
         maven 'Maven3'
     }
+<<<<<<< HEAD
     environment {
 	    APP_NAME = "register-app-pipeline"
             RELEASE = "1.0.0"
@@ -112,4 +113,25 @@ pipeline {
                      mimeType: 'text/html',to: "ashfaque.s510@gmail.com"
       }      
    }
+=======
+    stages{
+         stage("Cleanup Workspace"){
+                 steps{
+                  git branch: 'main', credentialsId: 'github1', url: 'https://github.com/aravind0560/Jenkins'
+                 }
+    }
+
+    stage("Build Application"){
+        steps {
+            sh "mvn clean package"
+        }
+   }
+
+   stage("Test Application"){
+       steps {
+              sh "mvn test"
+       }
+    } 
+ }
+>>>>>>> df94395e94cd48abcf075df424fdfa2cd9d856ea
 }
